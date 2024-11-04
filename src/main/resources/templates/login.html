@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="login-main" style="display: flex;">
+    <div class="login-container">
+        <h1>Sistema de Inventarios</h1>
+        <h2>Login</h2>
+        <!-- Formulario de login -->
+        <form class="login-form" th:action="@{/login}" method="post">
+            <figure>
+                <img src="/images/userLogin.png" alt="user" class="usuarioImage">
+            </figure>
+            <!-- Campo de usuario -->
+            <div class="form-group">
+                <label for="username">Usuario</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <!-- Campo de contraseña -->
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <!-- Botón de inicio de sesión -->
+            <button type="submit">Iniciar Sesión</button>
+            <!-- Mensaje de error -->
+            <div th:if="${param.error}">
+                <p th:text="${param.error}" style="color: red;"></p>
+            </div>
+            <!-- Mensaje de cierre de sesión -->
+            <div th:if="${param.logout}">
+                <p th:text="'Has cerrado sesión correctamente.'" style="color: green;"></p>
+            </div>
+        </form>
+    </div>
+</main>
+<script src="UsuariosUpdate.js"></script>
+</body>
+</html>
+

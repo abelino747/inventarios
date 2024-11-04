@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos globales para el contenedor del dashboard */
+        .dashboard-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        /* Estilos globales para los elementos del menú */
+        .menu-item {
+            display: inline-block;
+            margin: 20px;
+        }
+        /* Estilos globales para las imágenes del menú */
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+        }
+        /* Estilos globales para los enlaces del menú */
+        .menu-item a {
+            text-decoration: none;
+            color: black;
+        }
+        /* Estilos globales para el botón de cerrar sesión */
+        .logout-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff4d4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        /* Estilos globales para el hover del botón de cerrar sesión */
+        .logout-button:hover {
+            background-color: #ff1a1a;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div class="dashboard-container">
+        <h1>Dashboard</h1>
+        <p>Bienvenido al sistema de inventarios.</p>
+        <div class="menu">
+            <!-- Componente global para el menú de usuarios -->
+            <div class="menu-item">
+                <a href="/consultarUsuarios">
+                    <img src="/images/usuarios.png" alt="Usuarios">
+                    <p>Usuarios</p>
+                </a>
+            </div>
+            <!-- Componente global para el menú de productos -->
+            <div class="menu-item">
+                <a href="/consultarProductos">
+                    <img src="/images/productos.png" alt="Productos">
+                    <p>Productos</p>
+                </a>
+            </div>
+            <!-- Componente global para el menú de proveedores -->
+            <div class="menu-item">
+                <a href="/consultarProveedores">
+                    <img src="/images/proveedores.png" alt="Proveedores">
+                    <p>Proveedores</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Componente global para el botón de cerrar sesión -->
+    <a href="/login" class="logout-button">Cerrar Sesión</a>
+</main>
+<script src="UsuariosUpdate.js"></script>
+</body>
+</html>

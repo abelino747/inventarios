@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<main>
+    <a href="/dashboard" class="dashboard-button">Regresar</a>
+
+    <h1>Sistema de Inventarios Gestion Usuarios</h1>
+
+    <article class="card">
+        <!-- Botón para mostrar el formulario de creación de usuarios -->
+        <button type="button" class="btn btn-primary" id="btnCreate">Create</button>
+
+        <!-- Formulario para la creación de usuarios -->
+        <section class="card-header" id="formCreate">
+            <h2>Usuarios</h2>
+            <form action="/guardarUsuarios" method="post">
+                <label>ID: </label>
+                <input type="text" readonly>
+
+                <label>Nombre : </label>
+                <input type="text" name="nombre" required>
+
+                <label>Correo : </label>
+                <input type="text" name="correo" required>
+
+                <label>Teléfono: </label>
+                <input type="text" name="telefono" required>
+
+                <label>Cargo : </label>
+                <input type="text" name="cargo" required>
+
+                <label>Password : </label>
+                <input type="text" name="password" required>
+
+                <label>username : </label>
+                <input type="text" name="username" required>
+
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </section>
+
+        <!-- Formulario para la actualización de usuarios -->
+        <section class="card-header" id="formUpdate">
+            <form action="/actualizarUsuarios" method="post">
+                <label>ID: </label>
+                <input type="text" readonly name="id" id="idmodificar">
+
+                <label>Nombre : </label>
+                <input type="text" name="nombre" id="nombremodificar">
+
+                <label>Correo : </label>
+                <input type="text" name="correo" id="correomodificar">
+
+                <label>Teléfono: </label>
+                <input type="text" name="telefono" id="telefonomodificar">
+
+                <label>Cargo : </label>
+                <input type="text" name="cargo" id="cargomodificar">
+
+                <label>Password : </label>
+                <input type="text" name="password" id="passwordmodificar">
+
+                <label>username : </label>
+                <input type="text" name="username" id="usernamemodificar">
+
+                <button type="submit" class="btn btn-warning">Update</button>
+            </form>
+        </section>
+
+        <!-- Formulario para eliminar usuario -->
+        <section class="card-header" id="formDelete">
+            <form action="/eliminarUsuarios" method="post">
+                <label>ID: </label>
+                <input type="text" readonly name="id" id="ideliminar">
+
+                <label>Nombre : </label>
+                <input type="text" name="nombre" id="nombreeeliminar">
+
+                <label>Correo : </label>
+                <input type="text" name="correo" id="correoeliminar">
+
+                <label>Teléfono: </label>
+                <input type="text" name="telefono" id="telefonoeliminar">
+
+                <label>Cargo : </label>
+                <input type="text" name="cargo" id="cargoeliminar">
+
+                <label>Password : </label>
+                <input type="text" name="password" id="passwordeeliminar">
+
+                <label>Password : </label>
+                <input type="text" name="username" id="usernameeliminar">
+
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </section>
+    </article>
+
+    <article class="card">
+        <!-- Lista todos los usuarios en una tabla -->
+        <section class="card-body">
+            <table class="table-striped" id="tablaDatos">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>Cargo</th>
+                    <th>Contraseña</th>
+                    <th>UserName</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- El th:each simula un for each que recorre a usuarios -->
+                <tr th:each="users : ${usuarios}">
+                    <td th:text="${users.id}"></td>
+                    <td th:text="${users.nombre}"></td>
+                    <td th:text="${users.correo}"></td>
+                    <td th:text="${users.telefono}"></td>
+                    <td th:text="${users.cargo}"></td>
+                    <td th:text="${users.password}"></td>
+                    <td th:text="${users.username}"></td>
+
+                    <td>
+                        <button type="button" class="btn btn-warning">Update</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </article>
+</main>
+
+
+
+
+<script src="UsuariosUpdate.js"></script>
+
+</body>
+
+</html>

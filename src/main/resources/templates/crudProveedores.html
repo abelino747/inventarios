@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proveedores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<main>
+    <a href="/dashboard" class="dashboard-button">Regresar</a>
+    <h1>Sistema de Inventarios Gestión Proveedores</h1>
+
+    <article class="card">
+        <!-- Botón para mostrar el formulario de creación de proveedores -->
+        <button type="button" class="btn btn-primary" id="btnCreate">Create</button>
+
+        <!-- Formulario para la creación de proveedores -->
+        <section class="card-header" id="formCreate">
+            <h2>Proveedores</h2>
+            <form action="/guardarProveedores" method="post">
+                <label>ID: </label>
+                <input type="text" readonly>
+
+                <label>NIT: </label>
+                <input type="text" name="nit" required>
+
+                <label>Razón Social: </label>
+                <input type="text" name="razonSocial" required>
+
+                <label>Dirección: </label>
+                <input type="text" name="direccion" required>
+
+                <label>Encargado: </label>
+                <input type="text" name="encargado" required>
+
+                <label>Teléfono: </label>
+                <input type="text" name="telefono" required>
+
+                <label>Correo: </label>
+                <input type="text" name="correo" required>
+
+                <label>Días Pedidos: </label>
+                <select name="diasPedidos" required>
+                    <option value="lunes">Lunes</option>
+                    <option value="martes">Martes</option>
+                    <option value="miercoles">Miércoles</option>
+                    <option value="jueves">Jueves</option>
+                    <option value="viernes">Viernes</option>
+                    <option value="sabado">Sábado</option>
+                </select>
+
+                <label>Días Entrega: </label>
+                <select name="diasEntrega" required>
+                    <option value="lunes">Lunes</option>
+                    <option value="martes">Martes</option>
+                    <option value="miercoles">Miércoles</option>
+                    <option value="jueves">Jueves</option>
+                    <option value="viernes">Viernes</option>
+                    <option value="sabado">Sábado</option>
+                </select>
+
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </section>
+
+        <!-- Formulario para la actualización de proveedores -->
+        <section class="card-header" id="formUpdate">
+            <form action="/actualizarProveedores" method="post">
+                <label>ID: </label>
+                <input type="text" readonly name="id" id="idmodificar">
+
+                <label>NIT: </label>
+                <input type="text" name="nit" id="nitmodificar">
+
+                <label>Razón Social: </label>
+                <input type="text" name="razonSocial" id="razonsocialmodificar">
+
+                <label>Dirección: </label>
+                <input type="text" name="direccion" id="direccionmodificar">
+
+                <label>Encargado: </label>
+                <input type="text" name="encargado" id="encargadomodificar">
+
+                <label>Teléfono: </label>
+                <input type="text" name="telefono" id="telefonomodificar">
+
+                <label>Correo: </label>
+                <input type="text" name="correo" id="correomodificar">
+
+                <label>Días Pedidos: </label>
+                <select name="diasPedidos" id="diaspedidosmodificar" required>
+                    <option value="lunes">Lunes</option>
+                    <option value="martes">Martes</option>
+                    <option value="miercoles">Miércoles</option>
+                    <option value="jueves">Jueves</option>
+                    <option value="viernes">Viernes</option>
+                    <option value="sabado">Sábado</option>
+                </select>
+
+                <label>Días Entrega: </label>
+                <select name="diasEntrega" id="diasentregamodificar" required>
+                    <option value="lunes">Lunes</option>
+                    <option value="martes">Martes</option>
+                    <option value="miercoles">Miércoles</option>
+                    <option value="jueves">Jueves</option>
+                    <option value="viernes">Viernes</option>
+                    <option value="sabado">Sábado</option>
+                </select>
+
+                <button type="submit" class="btn btn-warning">Update</button>
+            </form>
+        </section>
+
+        <!-- Formulario para eliminar proveedor -->
+        <section class="card-header" id="formDelete">
+            <form action="/eliminarProveedores" method="post">
+                <label>ID: </label>
+                <input type="text" readonly name="id" id="ideliminar">
+
+                <label>NIT: </label>
+                <input type="text" name="nit" id="niteliminar">
+
+                <label>Razón Social: </label>
+                <input type="text" name="razonSocial" id="razonsocialeliminar">
+
+                <label>Dirección: </label>
+                <input type="text" name="direccion" id="direccioneliminar">
+
+                <label>Encargado: </label>
+                <input type="text" name="encargado" id="encargadoeliminar">
+
+                <label>Teléfono: </label>
+                <input type="text" name="telefono" id="telefonoeliminar">
+
+                <label>Correo: </label>
+                <input type="text" name="correo" id="correoeliminar">
+
+                <label>Días Pedidos: </label>
+                <select name="diasPedidos" id="diaspedidoseliminar" required>
+                    <option value="lunes">Lunes</option>
+                    <option value="martes">Martes</option>
+                    <option value="miercoles">Miércoles</option>
+                    <option value="jueves">Jueves</option>
+                    <option value="viernes">Viernes</option>
+                    <option value="sabado">Sábado</option>
+                </select>
+
+                <label>Días Entrega: </label>
+                <select name="diasEntrega" id="diasentregaeliminar" required>
+                    <option value="lunes">Lunes</option>
+                    <option value="martes">Martes</option>
+                    <option value="miercoles">Miércoles</option>
+                    <option value="jueves">Jueves</option>
+                    <option value="viernes">Viernes</option>
+                    <option value="sabado">Sábado</option>
+                </select>
+
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </section>
+    </article>
+
+    <article class="card">
+        <!-- Lista todos los proveedores en una tabla -->
+        <section class="card-body">
+            <table class="table-striped" id="tablaDatos">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NIT</th>
+                    <th>Razón Social</th>
+                    <th>Dirección</th>
+                    <th>Encargado</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Días Pedidos</th>
+                    <th>Días Entrega</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- El th:each simula un for each que recorre a proveedores -->
+                <tr th:each="proveedor : ${proveedores}">
+                    <td th:text="${proveedor.id}"></td>
+                    <td th:text="${proveedor.nit}"></td>
+                    <td th:text="${proveedor.razonSocial}"></td>
+                    <td th:text="${proveedor.direccion}"></td>
+                    <td th:text="${proveedor.encargado}"></td>
+                    <td th:text="${proveedor.telefono}"></td>
+                    <td th:text="${proveedor.correo}"></td>
+                    <td th:text="${proveedor.diasPedidos}"></td>
+                    <td th:text="${proveedor.diasEntrega}"></td>
+
+                    <td>
+                        <button type="button" class="btn btn-warning">Update</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </article>
+</main>
+
+<script src="ProveedoresUpdate.js"></script>
+
+</body>
+
+</html>

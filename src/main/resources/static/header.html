@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Definición del conjunto de caracteres -->
+    <meta charset="UTF-8" />
+    <!-- Configuración de la vista para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Título de la página -->
+    <title>Responsive Navbar and Footer</title>
+    <!-- Enlace a la hoja de estilos CSS -->
+    <link id="theme" rel="stylesheet" href="styles.css" type="text/css" />
+    <!-- Enlace al archivo JavaScript para actualizar usuarios -->
+    <script src="UsuariosUpdate.js" defer></script>
+</head>
+<body>
+<!-- Encabezado de la página -->
+<header>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <!-- Logo y nombre de la marca -->
+        <div class="navbar-brand">
+            <img src="/images/watermelon.png" alt="logo" class="logo">
+            MI PLAZA
+        </div>
+        <!-- Menú de navegación -->
+        <ul class="navbar-menu">
+            <li><a href="/login">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="/login">Cerrar Sesión</a></li>
+        </ul>
+        <!-- Botón de menú para dispositivos móviles -->
+        <div class="navbar-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+<!-- Salto de línea para separar el contenido del encabezado -->
+</br>
+
+<!-- Pie de página -->
+<footer>
+    <!-- Contenido del pie de página -->
+    <div class="footer-content">
+        <!-- Información de contacto -->
+        <div class="contact-info">
+            <p>MI PLAZA</p>
+            <p>Telefono : +57 3214777723</p>
+            <p>Direccion : CLL 42 f Sur # 87 b 16 </p>
+            <p>Email: abel9106@gmail.com</p>
+        </div>
+        <!-- Mapa de ubicación -->
+        <div class="map">
+            <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7836442394596!2d-74.17328517502115!3d4.632650095342108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9c2b35c2e417%3A0xf6efc6080a02c7df!2sCl.%2042f%20Sur%20%2387b-16%2C%20Kennedy%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1728849390048!5m2!1ses!2sco"
+                    style="border: 1px"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+        </div>
+        <!-- Enlaces a redes sociales -->
+        <div class="social-media">
+            <a href="#"><img src="/images/facebook-icon.webp" alt="Facebook" />FaceBook</a>
+            <a href="#"><img src="/images/twitter-icon.webp" alt="Twitter - x" />x - Twitter</a>
+            <a href="#"><img src="/images/instagram-icon.png" alt="Instagram" />Instagram</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

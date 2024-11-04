@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<main>
+    <a href="/dashboard" class="dashboard-button">Regresar</a>
+    <h1>Sistema de Inventarios Gestion Productos</h1>
+
+    <article class="card">
+        <!-- Botón para mostrar el formulario de creación de productos -->
+        <button type="button" class="btn btn-primary" id="btnCreate">Create</button>
+
+        <!-- Formulario para la creación de productos -->
+        <section class="card-header" id="formCreate">
+            <h2>Productos</h2>
+            <form action="/guardarProductos" method="post">
+                <label>ID: </label>
+                <input type="text" readonly>
+
+                <label>Nombre : </label>
+                <input type="text" name="nombre" required>
+
+                <label>Costo: </label>
+                <input type="text" name="costo" required>
+
+                <label>Precio: </label>
+                <input type="text" name="precio" required>
+
+                <label>Descuento: </label>
+                <input type="text" name="descuento" required>
+
+                <label>Promoción: </label>
+                <input type="checkbox" name="promocion">
+
+                <label>Fecha de Compra: </label>
+                <input type="date" name="fecha_de_compra" required>
+
+                <label>Vencimiento: </label>
+                <input type="date" name="vencimiento" required>
+
+                <label>Unidades Vendidas: </label>
+                <input type="text" name="unidadesVendidas" required>
+
+                <label>Unidades Existentes: </label>
+                <input type="text" name="unidadesExistentes" required>
+
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </section>
+
+        <!-- Formulario para la actualización de productos -->
+        <section class="card-header" id="formUpdate">
+            <form action="/actualizarProductos" method="post">
+                <label>ID: </label>
+                <input type="text" readonly name="id" id="idmodificar">
+
+                <label>Nombre : </label>
+                <input type="text" name="nombre" id="nombremodificar">
+
+                <label>Costo: </label>
+                <input type="text" name="costo" id="costomodificar">
+
+                <label>Precio: </label>
+                <input type="text" name="precio" id="preciomodificar">
+
+                <label>Descuento: </label>
+                <input type="text" name="descuento" id="descuentomodificar">
+
+                <label>Promoción: </label>
+                <input type="checkbox" name="promocion" id="promocionmodificar">
+
+                <label>Fecha de Compra: </label>
+                <input type="date" name="fecha_de_compra" id="fecha_de_compra_modificar">
+
+                <label>Vencimiento: </label>
+                <input type="date" name="vencimiento" id="vencimientomodificar">
+
+                <label>Unidades Vendidas: </label>
+                <input type="text" name="unidadesVendidas" id="unidadesVendidasmodificar">
+
+                <label>Unidades Existentes: </label>
+                <input type="text" name="unidadesExistentes" id="unidadesExistentesmodificar">
+
+                <button type="submit" class="btn btn-warning">Update</button>
+            </form>
+        </section>
+
+        <!-- Formulario para eliminar producto -->
+        <section class="card-header" id="formDelete">
+            <form action="/eliminarProductos" method="post">
+                <label>ID: </label>
+                <input type="text" readonly name="id" id="ideliminar">
+
+                <label>Nombre : </label>
+                <input type="text" name="nombre" id="nombreeeliminar">
+
+                <label>Costo: </label>
+                <input type="text" name="costo" id="costoeliminar">
+
+                <label>Precio: </label>
+                <input type="text" name="precio" id="precioeliminar">
+
+                <label>Descuento: </label>
+                <input type="text" name="descuento" id="descuentoeliminar">
+
+                <label>Promoción: </label>
+                <input type="checkbox" name="promocion" id="promocioneliminar">
+
+                <label>Fecha de Compra: </label>
+                <input type="date" name="fecha_de_compra" id="fecha_de_compra_eliminar">
+
+                <label>Vencimiento: </label>
+                <input type="date" name="vencimiento" id="vencimientoeliminar">
+
+                <label>Unidades Vendidas: </label>
+                <input type="text" name="unidadesVendidas" id="unidadesVendidaseliminar">
+
+                <label>Unidades Existentes: </label>
+                <input type="text" name="unidadesExistentes" id="unidadesExistenteseliminar">
+
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </section>
+    </article>
+
+    <article class="card">
+        <!-- Lista todos los productos en una tabla -->
+        <section class="card-body">
+            <table class="table-striped" id="tablaDatos">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Costo</th>
+                    <th>Precio</th>
+                    <th>Descuento</th>
+                    <th>Promoción</th>
+                    <th>Fecha de Compra</th>
+                    <th>Vencimiento</th>
+                    <th>Unidades Vendidas</th>
+                    <th>Unidades Existentes</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- El th:each simula un for each que recorre a productos -->
+                <tr th:each="product : ${productos}">
+                    <td th:text="${product.id}"></td>
+                    <td th:text="${product.nombre}"></td>
+                    <td th:text="${product.costo}"></td>
+                    <td th:text="${product.precio}"></td>
+                    <td th:text="${product.descuento}"></td>
+                    <td th:text="${product.promocion} ? 'Sí' : 'No'"></td>
+                    <td th:text="${product.fecha_de_compra}"></td>
+                    <td th:text="${product.vencimiento}"></td>
+                    <td th:text="${product.unidadesVendidas}"></td>
+                    <td th:text="${product.unidadesExistentes}"></td>
+
+                    <td>
+                        <button type="button" class="btn btn-warning">Update</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </article>
+</main>
+
+<script src="ProductosUpdate.js"></script>
+
+</body>
+
+</html>
