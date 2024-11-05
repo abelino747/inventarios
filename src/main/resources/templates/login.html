@@ -29,12 +29,12 @@
             <!-- Botón de inicio de sesión -->
             <button type="submit">Iniciar Sesión</button>
             <!-- Mensaje de error -->
-            <div th:if="${param.error}">
-                <p th:text="${param.error}" style="color: red;"></p>
+            <div th:if="${error != null}">
+                <p th:text="${error}" style="color: red;"></p>
             </div>
             <!-- Mensaje de cierre de sesión -->
-            <div th:if="${param.logout}">
-                <p th:text="'Has cerrado sesión correctamente.'" style="color: green;"></p>
+            <div th:if="${logout != null}">
+                <p th:text="${logout}" style="color: green;"></p>
             </div>
         </form>
     </div>
@@ -42,4 +42,3 @@
 <script src="UsuariosUpdate.js"></script>
 </body>
 </html>
-

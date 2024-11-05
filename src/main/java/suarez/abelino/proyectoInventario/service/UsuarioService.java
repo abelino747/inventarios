@@ -28,7 +28,6 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
-
     // actualizar los usuarios creados
     public UsuarioEntity actualizarUsuario (long id,UsuarioEntity usuario){
         UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
@@ -43,14 +42,12 @@ public class UsuarioService {
                 return usuarioRepository.save(usuarioExistente);
     }
 
-
     // eliminar los usuarios creados
     public void eliminarUsuarioPorId (long id){
         UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
                 .orElseThrow(( )-> new NoSuchElementException("Usuario no encontrado "));
         usuarioRepository.delete(usuarioExistente);
     }
-
 
 }
 // funciona hasta aqui sin codificar la contraseña

@@ -23,13 +23,19 @@ public class LoginController {
 
     // Método que maneja las solicitudes GET a la ruta "/login"
     @GetMapping("/login")
-    public String login() {
+    public String showLoginForm(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, Model model) {
+        if (error != null) {
+            model.addAttribute("error", error);
+        }
+        if (logout != null) {
+            model.addAttribute("logout", "Has cerrado sesión correctamente.");
+        }
         return "login"; // Devuelve el nombre de la vista de login
     }
 
     // Método que maneja las solicitudes POST a la ruta "/login"
     @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password, Model model) {
+    public String processLogin(@RequestParam String username, @RequestParam String password, Model model) {
         try {
             // Consulta SQL para verificar las credenciales del usuario
             String query = "SELECT COUNT(*) FROM inventarios.usuario WHERE username = ? AND password = ?";
@@ -41,9 +47,6 @@ public class LoginController {
                 return "redirect:/dashboard"; // Redirige a la página de inicio o dashboard
             } else {
                 // Si las credenciales son incorrectas, muestra un mensaje de error
-
-                System.out.println(" fallo el logueo ");
-
                 model.addAttribute("error", "Usuario o contraseña incorrectos");
                 return "login"; // Devuelve a la página de login con un mensaje de error
             }
@@ -54,5 +57,3 @@ public class LoginController {
         }
     }
 }
-
-//funciona hasta aqui sin srping security
