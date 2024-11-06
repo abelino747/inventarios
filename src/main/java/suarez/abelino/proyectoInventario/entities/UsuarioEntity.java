@@ -1,12 +1,17 @@
 package suarez.abelino.proyectoInventario.entities;
 
+// Importación de las anotaciones de JPA
 import jakarta.persistence.*;
 
+// Anotación @Entity para indicar que esta clase es una entidad JPA
 @Entity
+// Anotación @Table para especificar el nombre de la tabla en la base de datos
 @Table(name = "usuario")
 public class UsuarioEntity {
 
+    // Anotación @Id para indicar que este campo es la clave primaria
     @Id
+    // Anotación @GeneratedValue para especificar la estrategia de generación de la clave primaria
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
@@ -17,7 +22,7 @@ public class UsuarioEntity {
     private String password;
     private String username;
 
-    // Getters y setters
+    // Getters y setters para los campos de la entidad
 
     public long getId() {
         return id;

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Fetch and insert the header and footer
+    // Fetch y insertar el encabezado y el pie de página
     fetch('header.html')
         .then(response => response.text())
         .then(data => {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.body.insertAdjacentElement('beforeend', footer);
             }
 
-            // Add event listener for navbar toggle
+            // Añadir evento de clic para el toggle del menú de navegación
             const navbarToggle = document.querySelector('.navbar-toggle');
             const navbarMenu = document.querySelector('.navbar-menu');
 
@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => {
             console.error('Error fetching header.html:', error);
         });
-
 
     // Ocultar los formularios al cargar la página
     document.getElementById('formCreate').style.display = 'none';
@@ -90,13 +89,3 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('formDelete').style.display = 'none';
     };
 });
-
-
-
-
-
-
-
-
-
-
