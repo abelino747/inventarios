@@ -220,6 +220,29 @@ form button {
         height: 200px;
     }
 }
+ /* estilos del about*/
+ .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .about-section {
+            background-color: white;
+            padding: 2em;
+            margin: 2em 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section h2 {
+            color: #4CAF50;
+        }
+
+        .about-section p {
+            color: #333;
+        }
+
 
 @media (max-width: 480px) {
     .card {
