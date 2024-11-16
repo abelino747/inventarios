@@ -14,13 +14,13 @@ public class UsuarioEntity {
     // Anotación @GeneratedValue para especificar la estrategia de generación de la clave primaria
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private String nombre;
     private String correo;
     private String telefono;
     private String cargo;
     private String password;
-    private String username;
+
+    private   String username ;
 
     // Getters y setters para los campos de la entidad
 

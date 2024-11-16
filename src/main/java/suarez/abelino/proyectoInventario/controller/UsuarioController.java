@@ -51,8 +51,13 @@ public class UsuarioController {
     // Método para modificar usuarios
     @PostMapping("/actualizarUsuarios")
     public String ActualizarUsuario(@ModelAttribute UsuarioEntity usuario) {
+
+        if (usuario.getId() <=0 || usuario.getNombre()== null || usuario.getNombre()== "" ) {
+            return "redirect:/consultarUsuarios";
+        }
         // Llama al servicio para actualizar el usuario
         usuarioService.actualizarUsuario(usuario.getId(), usuario);
+
         // Redirige a la página de consulta de usuarios
         return "redirect:/consultarUsuarios";
     }

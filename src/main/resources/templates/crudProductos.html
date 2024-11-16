@@ -29,13 +29,13 @@
                 <input type="text" name="nombre" required>
 
                 <label>Costo: </label>
-                <input type="text" name="costo" required>
+                <input type="number" name="costo" required>
 
                 <label>Precio: </label>
-                <input type="text" name="precio" required>
+                <input type="number" name="precio" required>
 
                 <label>Descuento: </label>
-                <input type="text" name="descuento" required>
+                <input type="number" name="descuento" required>
 
                 <label>Promoción: </label>
                 <input type="checkbox" name="promocion">
@@ -47,10 +47,10 @@
                 <input type="date" name="vencimiento" required>
 
                 <label>Unidades Vendidas: </label>
-                <input type="text" name="unidadesVendidas" required>
+                <input type="number" name="unidadesVendidas" required>
 
                 <label>Unidades Existentes: </label>
-                <input type="text" name="unidadesExistentes" required>
+                <input type="number" name="unidadesExistentes" required>
 
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>
@@ -60,34 +60,34 @@
         <section class="card-header" id="formUpdate">
             <form action="/actualizarProductos" method="post">
                 <label>ID: </label>
-                <input type="text" readonly name="id" id="idmodificar">
+                <input type="number" readonly name="id" id="idmodificar" required>
 
                 <label>Nombre: </label>
-                <input type="text" name="nombre" id="nombremodificar">
+                <input type="text" name="nombre" id="nombremodificar" required>
 
                 <label>Costo: </label>
-                <input type="text" name="costo" id="costomodificar">
+                <input type="number" name="costo" id="costomodificar" required>
 
                 <label>Precio: </label>
-                <input type="text" name="precio" id="preciomodificar">
+                <input type="number" name="precio" id="preciomodificar" required>
 
                 <label>Descuento: </label>
-                <input type="text" name="descuento" id="descuentomodificar">
+                <input type="number" name="descuento" id="descuentomodificar" required>
 
                 <label>Promoción: </label>
-                <input type="checkbox" name="promocion" id="promocionmodificar">
+                <input type="checkbox" name="promocion" id="promocionmodificar" >
 
                 <label>Fecha de Compra: </label>
-                <input type="date" name="fecha_de_compra" id="fecha_de_compra_modificar">
+                <input type="date" name="fecha_de_compra" id="fecha_de_compra_modificar" required>
 
                 <label>Vencimiento: </label>
-                <input type="date" name="vencimiento" id="vencimientomodificar">
+                <input type="date" name="vencimiento" id="vencimientomodificar" required>
 
                 <label>Unidades Vendidas: </label>
-                <input type="text" name="unidadesVendidas" id="unidadesVendidasmodificar">
+                <input type="number" name="unidadesVendidas" id="unidadesVendidasmodificar" required>
 
                 <label>Unidades Existentes: </label>
-                <input type="text" name="unidadesExistentes" id="unidadesExistentesmodificar">
+                <input type="number" name="unidadesExistentes" id="unidadesExistentesmodificar" required>
 
                 <button type="submit" class="btn btn-warning">Update</button>
             </form>
@@ -97,10 +97,10 @@
         <section class="card-header" id="formDelete">
             <form action="/eliminarProductos" method="post">
                 <label>ID: </label>
-                <input type="text" readonly name="id" id="ideliminar">
+                <input type="text" readonly name="id" id="ideliminar" required>
 
                 <label>Nombre: </label>
-                <input type="text" name="nombre" id="nombreeeliminar">
+                <input type="text" name="nombre" id="nombreeeliminar" required>
 
                 <label>Costo: </label>
                 <input type="text" name="costo" id="costoeliminar">

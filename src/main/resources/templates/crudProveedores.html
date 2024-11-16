@@ -71,25 +71,25 @@
         <section class="card-header" id="formUpdate">
             <form action="/actualizarProveedores" method="post">
                 <label>ID: </label>
-                <input type="text" readonly name="id" id="idmodificar">
+                <input type="text" readonly name="id" id="idmodificar" >
 
                 <label>NIT: </label>
-                <input type="text" name="nit" id="nitmodificar">
+                <input type="text" name="nit" id="nitmodificar" required>
 
                 <label>Razón Social: </label>
-                <input type="text" name="razonSocial" id="razonsocialmodificar">
+                <input type="text" name="razonSocial" id="razonsocialmodificar" required>
 
                 <label>Dirección: </label>
-                <input type="text" name="direccion" id="direccionmodificar">
+                <input type="text" name="direccion" id="direccionmodificar" >
 
                 <label>Encargado: </label>
-                <input type="text" name="encargado" id="encargadomodificar">
+                <input type="text" name="encargado" id="encargadomodificar" required>
 
                 <label>Teléfono: </label>
-                <input type="text" name="telefono" id="telefonomodificar">
+                <input type="number" name="telefono" id="telefonomodificar" required>
 
                 <label>Correo: </label>
-                <input type="text" name="correo" id="correomodificar">
+                <input type="email" name="correo" id="correomodificar" required>
 
                 <label>Días Pedidos: </label>
                 <select name="diasPedidos" id="diaspedidosmodificar" required>
@@ -119,25 +119,25 @@
         <section class="card-header" id="formDelete">
             <form action="/eliminarProveedores" method="post">
                 <label>ID: </label>
-                <input type="text" readonly name="id" id="ideliminar">
+                <input type="text" readonly name="id" id="ideliminar" required>
 
                 <label>NIT: </label>
-                <input type="text" name="nit" id="niteliminar">
+                <input type="text" name="nit" id="niteliminar" required>
 
                 <label>Razón Social: </label>
-                <input type="text" name="razonSocial" id="razonsocialeliminar">
+                <input type="text" name="razonSocial" id="razonsocialeliminar" required>
 
                 <label>Dirección: </label>
-                <input type="text" name="direccion" id="direccioneliminar">
+                <input type="text" name="direccion" id="direccioneliminar" >
 
                 <label>Encargado: </label>
-                <input type="text" name="encargado" id="encargadoeliminar">
+                <input type="text" name="encargado" id="encargadoeliminar" required>
 
                 <label>Teléfono: </label>
-                <input type="text" name="telefono" id="telefonoeliminar">
+                <input type="number" name="telefono" id="telefonoeliminar" required>
 
                 <label>Correo: </label>
-                <input type="text" name="correo" id="correoeliminar">
+                <input type="email" name="correo" id="correoeliminar" required>
 
                 <label>Días Pedidos: </label>
                 <select name="diasPedidos" id="diaspedidoseliminar" required>

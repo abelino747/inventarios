@@ -32,7 +32,7 @@
                 <input type="text" name="correo" required>
 
                 <label>Teléfono: </label>
-                <input type="text" name="telefono" required>
+                <input type="number" name="telefono" required>
 
                 <label>Cargo : </label>
                 <input type="text" name="cargo" required>
@@ -50,26 +50,26 @@
         <!-- Formulario para la actualización de usuarios -->
         <section class="card-header" id="formUpdate">
             <form action="/actualizarUsuarios" method="post">
-                <label>ID: </label>
-                <input type="text" readonly name="id" id="idmodificar">
+                <label hidden="">ID: </label>
+                <input type="text" readonly name="id" id="idmodificar" hidden="">
 
                 <label>Nombre : </label>
-                <input type="text" name="nombre" id="nombremodificar">
+                <input type="text" name="nombre" id="nombremodificar" required>
 
                 <label>Correo : </label>
-                <input type="text" name="correo" id="correomodificar">
+                <input type="email" name="correo" id="correomodificar" required>
 
                 <label>Teléfono: </label>
-                <input type="text" name="telefono" id="telefonomodificar">
+                <input type="number" name="telefono" id="telefonomodificar" required>
 
                 <label>Cargo : </label>
-                <input type="text" name="cargo" id="cargomodificar">
+                <input type="text" name="cargo" id="cargomodificar" required>
 
                 <label>Password : </label>
-                <input type="text" name="password" id="passwordmodificar">
+                <input type="password" name="password" id="passwordmodificar" required>
 
                 <label>username : </label>
-                <input type="text" name="username" id="usernamemodificar">
+                <input type="text" name="username" id="usernamemodificar" required>
 
                 <button type="submit" class="btn btn-warning">Update</button>
             </form>
